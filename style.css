@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Overpass', sans-serif;
+    background: black;
+}
+
+.panels {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: 98vh;
+}
+
+.panel {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 4rem;
+    text-shadow: .2rem .2rem 1rem rgba(0, 0, 0, .6);
+    text-align: center;
+    color: white;
+    background: linear-gradient(to bottom, red, blue);
+    transition: all .5s ease-in-out;
+}
+
+.panel p:first-child,
+.panel p:last-child {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .5s ease-in-out;
+}
+
+.panel p:first-child {
+    top: 0;
+}
+
+.panel p:last-child {
+    bottom: 0;
+}
+
+.panel:hover p:first-child,
+.panel:hover p:last-child {
+    opacity: 1;
+}
+
+.panel:hover p:first-child {
+    top: 20%;
+}
+
+.panel:hover p:last-child {
+    bottom: 20%;
+}
+
+.panel:hover {
+    flex: 3;
+}
+
+.panel1 {
+    background: url('./images/forest.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.panel2 {
+    background: url('./images/ocean.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.panel3 {
+    background: url('./images/stars.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.panel4 {
+    background: url('./images/desert.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.panel5 {
+    background: url('./images/montain.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 30%;
+    }
+
+    .panel:hover p:first-child {
+        top: 30%;
+    }
+
+    .panel:hover p:last-child {
+        bottom: 30%;
+    }
+}
